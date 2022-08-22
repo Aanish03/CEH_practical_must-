@@ -1,0 +1,31 @@
+what is whois 
+
+is a qery & responce protocol  
+
+
+syntax  
+; 
+whois domain name 
+
+what he return 
+
+email 
+name 
+phone number 
+ 
+
+the information got ike this  
+
+Registry Registrant ID:
+Registrant Name: Domain Name Manager
+Registrant Organization: Turner Broadcasting System, Inc.
+Registrant Street: One CNN Center
+Registrant City: Atlanta
+Registrant State/Province: GA
+Registrant Postal Code: 30303
+Registrant Country: US
+Registrant Phone: +1.4048275000
+Registrant Phone Ext:
+Registrant Fax: +1.4048271995
+Registrant Fax Ext:
+Registrant Email: tmgroup@turner.co  

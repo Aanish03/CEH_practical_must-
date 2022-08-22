@@ -1,0 +1,8 @@
+Command line usage
+First we’ll be copying a site using the command line tool. This can take some time, depending on how large your site is. The command for making the copy is:
+
+httrack http://SITE_URL -O LOCALDIRECTORY
+
+Where SITE_URL is the actual URL of the site you want to copy and LOCALDIRECTORY is the directory on your local drive to store the copy. Once the command completes, you’ll see the newly created clone in LOCALDIRECTORY. You can then start working with that clone without affecting your production site.
+
+The biggest caveat to using this tool is that, depending on how the site was written and how it is housed, your results may vary. If you find httrack downloads little more than an index file, chances are, it won’t work on your site. I have found, so far, that WordPress sites, especially those housed on third-party hosts, are next to impossible to clone using this tool.

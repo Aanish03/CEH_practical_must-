@@ -1,0 +1,99 @@
+*dirb * 
+
+
+* basic syntax * 
+
+
+ dirb url 
+
+dirb http://text.com/
+
+** output file ** 
+
+-o filenmae.txt 
+
+dirb http://test.com/ -o save.txt
+
+
+** word list ** 
+
+by default dirb  use /usr/share/dirb/common.txt 
+
+if we now the target then ls /usr/share/dirb/vulns 
+
+
+** verbos scan ** 
+-w
+
+dirb http://text.com/ -w 
+
+** specific extention 
+
+dirb http://test.com/ -x .php
+
+-x 
+
+** multiple extention  ** 
+
+dirb http://test.com/ -x .php , .asp ,.jsp 
+
+** find tile baseed ** 
+
+dirb  http://test.com -H .php 
+
+**handle status code ** 
+
+-z time in ms 
+
+dirb http://test.com/ -z 10000
+
+-N  
+
+dirb http://test.com/ -N 302  // ignore 302 
+
+** fire wall bypass ** 
+
+
+
+
+
+
+** proxy ** 
+-p 
+
+use burp and set a proxy 
+
+dirb http://target -p proxyip:proxyport 
+
+**  change user agent ** 
+-a "user aget "
+dirb http://localhost/ -a "user agent "
+
+
+** authentication ** 
+-c 
+
+dirb hhtp:/text.com -c "value of cookee"
+
+** costome header ** 
+-H 
+
+dirb http://test.com -H test:value 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://highon.coffee/blog/enum4linux-cheat-sheet/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="./enum4linux_files/f.txt"></script><script src="./enum4linux_files/f(1).txt" id="google_shimpl"></script><script async="" src="./enum4linux_files/analytics.js.download"></script><script async="" src="./enum4linux_files/analytics.js.download"></script><script src="./enum4linux_files/oTwK22odZsY2CPSkVz5V2kmEjP0.js.download"></script><link rel="canonical" href="https://highon.coffee/blog/enum4linux-cheat-sheet/">
+<title>enum4linux Cheat Sheet</title>
+<meta name="description" content="enum4linux description, examples, cheatsheet and practical examples">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="highon.coffee - penentration testing, hacking and coffee" href="https://highon.coffee/feed.xml">
+<link rel="stylesheet" href="./enum4linux_files/css">
+<link rel="stylesheet" type="text/css" href="./enum4linux_files/screen.css">
+<link href="./enum4linux_files/font-awesome.min.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="https://highon.coffee/favicon.ico">
+<!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+
+<script async="" defer="" src="./enum4linux_files/buttons.js.download" type="text/javascript"></script>
+<meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><link rel="preload" href="./enum4linux_files/f(2).txt" as="script"><script type="text/javascript" src="./enum4linux_files/f(2).txt"></script><link rel="preload" href="./enum4linux_files/f(3).txt" as="script"><script type="text/javascript" src="./enum4linux_files/f(3).txt"></script></head>
+<body class="wrap">
+<header>
+<nav class="mobile-nav show-on-mobiles">
+<ul>
+<li class="">
+<a href="https://highon.coffee/">Home</a>
+</li>
+<li class="current">
+<a href="https://highon.coffee/blog/">Blog</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/about/"><span class="hide-on-mobiles">About</span></a>
+</li>
+<li class="">
+<a href="https://highon.coffee/services/"><span class="hide-on-mobiles">Services</span></a>
+</li>
+</ul>
+</nav>
+<div class="grid">
+<div class="unit one-third center-on-mobiles">
+<h1>
+<a href="https://highon.coffee/">
+<span>HighOn.Coffee</span>
+<img src="./enum4linux_files/highoncoffee.png" width="300" height="115" alt="Logo">
+</a>
+</h1>
+</div>
+<nav class="main-nav unit two-thirds hide-on-mobiles">
+<ul>
+<li class="">
+<a href="https://highon.coffee/">Home</a>
+</li>
+<li class="current">
+<a href="https://highon.coffee/blog/">Blog</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/about/"><span class="hide-on-mobiles">About</span></a>
+</li>
+<li class="">
+<a href="https://highon.coffee/services/"><span class="hide-on-mobiles">Services</span></a>
+</li>
+</ul>
+</nav>
+</div>
+<script async="" data-ad-client="ca-pub-2255714574547647" src="./enum4linux_files/f(4).txt" type="text/javascript" data-checked-head="true"></script>
+</header>
+<section class="blog">
+<div class="grid">
+<div class="docs-nav-mobile unit whole show-on-mobiles">
+<select onchange="if (!window.__cfRLUnblockHandlers) return false; if (this.value) window.location.href=this.value">
+<option value="">Navigate the blog…</option>
+<option value="/blog/">Home</option>
+<optgroup label="v1.x">
+<option value="/blog/reverse-shell-cheat-sheet/">Reverse Shell Cheat Sheet: PHP, Python, Powershell, Bash, NC, JSP, Java, Perl</option>
+<option value="/blog/insecure-direct-object-reference-idor/">Insecure Direct Object Reference (IDOR): Definition, Examples &amp; How to Find</option>
+<option value="/blog/nmap-cheat-sheet/">Nmap Cheat Sheet: Commands &amp; Examples (2022)</option>
+<option value="/blog/encrypted-note-taking-solution/">Encrypted Notes App Solution (iOS, Android, MacOS, Linux, Windows)</option>
+<option value="/blog/dns-tunnel-dnscat2-cheat-sheet/">DNS Tunneling dnscat2 Cheat Sheet</option>
+<option value="/blog/ssh-lateral-movement-cheat-sheet/">SSH Lateral Movement Cheat Sheet</option>
+<option value="/blog/android-app-pen-testing-environment/">Android Pen Testing Environment Setup</option>
+<option value="/blog/password-reset-security-testing-cheat-sheet/">Password Reset Testing Cheat Sheet</option>
+<option value="/blog/ssrf-cheat-sheet/">SSRF Cheat Sheet &amp; Bypass Techniques</option>
+<option value="/blog/penetration-testing-tools-cheat-sheet/">Penetration Testing Tools Cheat Sheet</option>
+<option value="/blog/lfi-cheat-sheet/">LFI Cheat Sheet</option>
+<option value="/blog/kali-chromium-install/">HowTo: Kali Linux Chromium Install for Web App Pen Testing</option>
+ <option value="/blog/insomnihack-ctf-teaser-smartcat2-writeup/">InsomniHack CTF Teaser - Smartcat2 Writeup</option>
+<option value="/blog/insomnihack-ctf-teaser-smartcat1-writeup/">InsomniHack CTF Teaser - Smartcat1 Writeup</option>
+<option value="/blog/fristileaks-walkthrough/">FristiLeaks 1.3 Walkthrough</option>
+<option value="/blog/sickos-1-walkthrough/">SickOS 1.1 - Walkthrough</option>
+<option value="/blog/the-wall-walkthrough/">The Wall Boot2Root Walkthrough</option>
+<option value="/blog/sleepy-ctf-walkthrough/">/dev/random: Sleepy Walkthrough CTF</option>
+<option value="/blog/pipe-ctf-walkthrough/">/dev/random Pipe walkthrough</option>
+<option value="/blog/lord-of-the-root-walkthrough/">Lord of the Root Walkthrough CTF</option>
+<option value="/blog/vi-cheat-sheet/">Vi Cheat Sheet</option>
+<option value="/blog/jenkins-api-unauthenticated-rce-exploit/">Jenkins RCE via Unauthenticated API</option>
+<option value="/blog/skytower-walkthrough/">SkyTower - Walkthrough</option>
+<option value="/blog/zorz-walkthrough/">Zorz Walkthrough</option>
+<option value="/blog/systemd-cheat-sheet/">Systemd Cheat Sheet</option>
+<option value="/blog/freshly-walkthrough/">Freshly Walkthrough</option>
+<option value="/blog/macbook-post-install-check-list/">MacBook - Post Install Config + Apps</option>
+<option value="/blog/fartknocker-walkthrough/">FartKnocker - Walkthrough</option>
+<option value="/blog/nbtscan-cheat-sheet/">nbtscan Cheat Sheet</option>
+<option value="/blog/enum4linux-cheat-sheet/">enum4linux Cheat Sheet</option>
+<option value="/blog/linux-local-enumeration-script/">Linux Local Enumeration Script</option>
+<option value="/blog/security-harden-centos-7/">Security Harden CentOS 7</option>
+<option value="/blog/ssh-meterpreter-pivoting-techniques/">SSH &amp; Meterpreter Pivoting Techniques</option>
+<option value="/blog/howto-install-quassel-ubuntu/">HowTo Install Quassel on Ubuntu</option>
+<option value="/blog/sokar-walkthrough/">Sokar - Walkthrough</option>
+<option value="/blog/tr0ll-2-walkthrough/">Tr0ll 2 Walkthrough</option>
+<option value="/blog/tr0ll-1-walkthrough/">Tr0ll 1 Walkthrough</option>
+<option value="/blog/linux-commands-cheat-sheet/">Linux Commands Cheat Sheet</option>
+<option value="/blog/shellshock-pen-testers-lab-walkthrough/">Pen Testers Lab: Shellshock CVE-2014-6271 - Walkthrough</option>
+<option value="/blog/keepnote-macbook-install-instructions/">HowTo Install KeepNote on OSX Mavericks</option>
+<option value="/blog/lamp-security-ctf8-walkthrough/">LAMP Security CTF8 - Walkthrough</option>
+<option value="/blog/kioptrix-level-2014-walkthrough/">Kioptrix Level 2014 Walkthrough</option>
+<option value="/blog/lamp-security-ctf7-walkthrough/">LAMP Security CTF7 - Walkthrough</option>
+<option value="/blog/lamp-security-ctf6-walkthrough/">LAMP Security CTF6 - Walkthrough</option>
+<option value="/blog/lamp-security-ctf5-walkthrough/">LAMP Security CTF5 - Walkthrough</option>
+<option value="/blog/lamp-security-ctf4-walkthrough/">LAMP Security CTF4 - Walkthrough</option>
+<option value="/blog/kioptrix-level-1-2-walkthrough/">Kioptrix Level 1.2 Walkthrough</option>
+<option value="/blog/kioptrix-level-1-1-walkthrough/">Kioptrix Level 1.1 Walkthrough</option>
+<option value="/blog/kioptrix-level-1-walkthrough/">Kioptrix Level 1 Walkthrough</option>
+</optgroup>
+</select>
+</div>
+<div class="unit four-fifths">
+<article>
+<h2>
+enum4linux Cheat Sheet
+<a href="https://highon.coffee/blog/enum4linux-cheat-sheet/" class="permalink" title="Permalink">∞</a>
+</h2>
+<span class="post-category">
+<span class="label">
+Cheat-Sheet
+</span>
+</span>
+<div class="post-meta">
+<span class="post-date">
+29 Mar 2015
+</span>
+<a href="https://twitter.com/Arr0way" class="post-author">
+<img src="./enum4linux_files/Arr0way.png" class="avatar" alt="Arr0way" width="24" height="24">
+Arr0way
+</a>
+</div>
+<div class="post-content">
+<p><strong><a href="https://labs.portcullis.co.uk/tools/enum4linux/">enum4linux</a></strong> is an alternative to enum.exe on Windows, enum4linux is used to enumerate Windows and Samba hosts.</p>
+<p><strong>enum4linux in a nutshell</strong></p>
+<ul>
+<li>RID cycling (When RestrictAnonymous is set to 1 on Windows 2000)</li>
+<li>User listing (When RestrictAnonymous is set to 0 on Windows 2000)</li>
+<li>Listing of group membership information</li>
+<li>Share enumeration</li>
+<li>Detecting if host is in a workgroup or a domain</li>
+<li>Identifying the remote operating system</li>
+<li>Password policy retrieval (using polenum)</li>
+</ul>
+<h3 id="enum4linux-cheat-sheet">enum4linux Cheat Sheet<a class="header-link" href="https://highon.coffee/blog/enum4linux-cheat-sheet/#enum4linux-cheat-sheet"><i class="fa fa-link"></i></a></h3>
+<div class="mobile-side-scroller">
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p><code>enum4linux -v target-ip</code></p>
+</td>
+<td>
+<p>Verbose mode, shows the underlying commands being executed by enum4linux</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -a target-ip</code></p>
+</td>
+<td>
+<p>Do Everything, runs all options apart from dictionary based share name guessing</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -U target-ip</code></p>
+</td>
+<td>
+<p>Lists usernames, if the server allows it - (RestrictAnonymous = 0)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -u administrator <br>-p password -U target-ip</code></p>
+</td>
+<td>
+<p>If you've managed to obtain credentials, you can pull a full list of users regardless of the RestrictAnonymous option</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -r target-ip</code></p>
+</td>
+<td>
+<p>Pulls usernames from the default RID range (500-550,1000-1050)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -R 600-660 target-ip</code></p>
+</td>
+<td>
+<p>Pull usernames using a custom RID range</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -G target-ip</code></p>
+</td>
+<td>
+<p>Lists groups. if the server allows it, you can also specify username <code>-u</code> and password <code>-p</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -S target-ip</code></p>
+</td>
+<td>
+<p>List Windows shares, again you can also specify username <code>-u</code> and password <code>-p</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -s shares.txt target-ip</code></p>
+</td>
+<td>
+<p>Perform a dictionary attack, if the server doesn't let you retrieve a share list </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>enum4linux -o target-ip</code></p>
+</td>
+<td>
+<p>Pulls OS information using smbclient, this can pull the service pack version on some versions of Windows</p>
+</td>
+</tr>
+<tr><td>
+<p><code>enum4linux -i target-ip</code></p>
+</td>
+<td>
+<p>Pull information about printers known to the remove device.</p>
+</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<section class="share-box">
+<div class="grid">
+<div class="unit whole">
+<div class="grid pane">
+<div class="unit whole center-on-mobiles">
+<div class="pane-content">
+<h2>Share this on...</h2>
+<p><a href="https://twitter.com/intent/tweet?text=enum4linux%20Cheat%20Sheet&amp;url=https://highon.coffee/blog/enum4linux-cheat-sheet/&amp;via=Arr0way&amp;related=Arr0way" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+<a href="https://facebook.com/sharer.php?u=https://highon.coffee/blog/enum4linux-cheat-sheet/" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a>
+<a href="https://plus.google.com/share?url=https://highon.coffee/blog/enum4linux-cheat-sheet/" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square" aria-hidden="true"></i> Google+</a>
+<a href="https://www.reddit.com/submit?url=https://highon.coffee/blog/enum4linux-cheat-sheet/&amp;title=enum4linux%20Cheat%20Sheet" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit-square" aria-hidden="true"></i> Reddit</a></p>
+<h2><br>Follow Arr0way</h2>
+<p><a href="https://twitter.com/Arr0way" rel="nofollow" target="_blank" title="Follow on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+<a href="https://github.com/Arr0way" rel="nofollow" target="_blank" title="Follow on GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> GitHub</a></p>
+<p><br></p>
+</div>
+</div>
+<h2><br>Also... <br> <br>You might want to read these</h2>
+</div>
+</div>
+</div></section>
+<div class="mobile-side-scroller">
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Post Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/reverse-shell-cheat-sheet/">Reverse Shell Cheat Sheet: PHP, Python, Powershell, Bash, NC, JSP, Java, Perl</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>Web App Security</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/insecure-direct-object-reference-idor/">Insecure Direct Object Reference (IDOR): Definition, Examples &amp; How to Find</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/nmap-cheat-sheet/">Nmap Cheat Sheet: Commands &amp; Examples (2022)</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>SecOps</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/encrypted-note-taking-solution/">Encrypted Notes App Solution (iOS, Android, MacOS, Linux, Windows)</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/dns-tunnel-dnscat2-cheat-sheet/">DNS Tunneling dnscat2 Cheat Sheet</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/ssh-lateral-movement-cheat-sheet/">SSH Lateral Movement Cheat Sheet</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/android-app-pen-testing-environment/">Android Pen Testing Environment Setup</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/password-reset-security-testing-cheat-sheet/">Password Reset Testing Cheat Sheet</a></b></p></pc>
+</td>
+</tr>
+
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/ssrf-cheat-sheet/">SSRF Cheat Sheet &amp; Bypass Techniques</a></b></p></pc>
+</td>
+</tr>
+<tr>
+<td>
+<pc><p><code>cheat-sheet</code></p></pc>
+</td>
+<td>
+<pc><p><b><a href="https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/">Penetration Testing Tools Cheat Sheet</a></b></p></pc>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<div class="unit one-fifth hide-on-mobiles">
+<aside>
+<ul>
+<li class="">
+<a href="https://highon.coffee/blog/">All Blog</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/cheat-sheet/">Cheat Sheets</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/techniques/">Techniques</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/security-hardening/">Security Hardening</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/walkthroughs/">WalkThroughs</a>
+</li>
+</ul>
+<h4>Cheat Sheets</h4>
+<ul>
+<li class="">
+<a href="https://highon.coffee/blog/reverse-shell-cheat-sheet/">Reverse Shell Cheat Sheet: PHP, Python, Powershell, Bash, NC, JSP, Java, Perl</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/nmap-cheat-sheet/">Nmap Cheat Sheet: Commands &amp; Examples (2022)</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/dns-tunnel-dnscat2-cheat-sheet/">DNS Tunneling dnscat2 Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/ssh-lateral-movement-cheat-sheet/">SSH Lateral Movement Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/android-app-pen-testing-environment/">Android Pen Testing Environment Setup</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/password-reset-security-testing-cheat-sheet/">Password Reset Testing Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/ssrf-cheat-sheet/">SSRF Cheat Sheet &amp; Bypass Techniques</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/">Penetration Testing Tools Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/lfi-cheat-sheet/">LFI Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/vi-cheat-sheet/">Vi Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/systemd-cheat-sheet/">Systemd Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/nbtscan-cheat-sheet/">nbtscan Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/linux-commands-cheat-sheet/">Linux Commands Cheat Sheet</a>
+</li>
+<li>
+<a href="https://highon.coffee/blog/cheat-sheet/">More »</a>
+</li>
+</ul>
+<h4>WalkThroughs</h4>
+<ul>
+<li class="">
+<a href="https://highon.coffee/blog/insomnihack-ctf-teaser-smartcat2-writeup/">InsomniHack CTF Teaser - Smartcat2 Writeup</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/insomnihack-ctf-teaser-smartcat1-writeup/">InsomniHack CTF Teaser - Smartcat1 Writeup</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/fristileaks-walkthrough/">FristiLeaks 1.3 Walkthrough</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/sickos-1-walkthrough/">SickOS 1.1 - Walkthrough</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/the-wall-walkthrough/">The Wall Boot2Root Walkthrough</a>
+</li>
+<li>
+<a href="https://highon.coffee/blog/walkthroughs/">More »</a>
+</li>
+</ul>
+<h4>Techniques</h4>
+<ul>
+<li class="">
+<a href="https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/">SSH &amp; Meterpreter Pivoting Techniques</a>
+</li>
+<li>
+<a href="https://highon.coffee/blog/techniques/">More »</a>
+</li>
+</ul>
+<h4>Security Hardening</h4>
+<ul>
+<li class="">
+<a href="https://highon.coffee/blog/security-harden-centos-7/">Security Harden CentOS 7</a>
+</li>
+<li>
+<a href="https://highon.coffee/blog/security-hardening/">More »</a>
+</li>
+</ul>
+<h4>/dev/urandom</h4>
+<ul>
+<li class="">
+<a href="https://highon.coffee/blog/macbook-post-install-check-list/">MacBook - Post Install Config + Apps</a>
+</li>
+<li>
+<a href="https://highon.coffee/blog/urandom/">More »</a>
+</li>
+</ul>
+<h4>Other Blog</h4>
+<ul>
+<li class="">
+<a href="https://highon.coffee/blog/insecure-direct-object-reference-idor/">Insecure Direct Object Reference (IDOR): Definition, Examples &amp; How to Find</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/encrypted-note-taking-solution/">Encrypted Notes App Solution (iOS, Android, MacOS, Linux, Windows)</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/kali-chromium-install/">HowTo: Kali Linux Chromium Install for Web App Pen Testing</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/jenkins-api-unauthenticated-rce-exploit/">Jenkins RCE via Unauthenticated API</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/macbook-post-install-check-list/">MacBook - Post Install Config + Apps</a>
+</li>
+
+<li class="current">
+<a href="https://highon.coffee/blog/enum4linux-cheat-sheet/">enum4linux Cheat Sheet</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/linux-local-enumeration-script/">Linux Local Enumeration Script</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/howto-install-quassel-ubuntu/">HowTo Install Quassel on Ubuntu</a>
+</li>
+<li class="">
+<a href="https://highon.coffee/blog/keepnote-macbook-install-instructions/">HowTo Install KeepNote on OSX Mavericks</a>
+</li>
+</ul>
+</aside>
+</div>
+<div class="clear"></div>
+</div>
+</section>
+<footer>
+<div class="grid">
+<div class="unit one-third center-on-mobiles">
+<p>The contents of this website are ©&nbsp;2022 <a href="https://highon.coffee/">HighOn.Coffee</a></p>
+</div>
+<div class="unit two-thirds align-right center-on-mobiles">
+<p>
+Proudly hosted by
+<img src="./enum4linux_files/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+
+</p>
+</div>
+</div>
+</footer>
+<script type="text/javascript">
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("blog")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55017594-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<div id="torrent-scanner-popup" style="display: none;"></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./enum4linux_files/ads.html" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe src="./enum4linux_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./enum4linux_files/zrt_lookup.html" style="display: none;"></iframe></html>

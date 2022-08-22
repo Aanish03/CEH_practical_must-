@@ -1,0 +1,12 @@
+To look up website IP addresses with WHOIS, visit one of the public sites such as who.is or networksolutions.com that offer WHOIS database query services. Searching for a particular site name produces a result similar to the following:
+********************************************************************************************************
+
+Current Registrar: REGISTER.COM, INC.
+IP Address: 207.241.148.80 (ARIN & RIPE IP search)
+******************************************************************************************************
+websites for whois lookup 
+
+1} who.is
+2} networksolutions.om 
+
+

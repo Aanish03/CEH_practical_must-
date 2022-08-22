@@ -1,0 +1,10 @@
+/**** scan for the share **/ 
+
+
+smbclient -L ip 
+
+
+*** connect to enumerated share  **/  
+
+
+smbclient //ip/share-name 

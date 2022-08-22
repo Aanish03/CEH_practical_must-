@@ -1,0 +1,75 @@
+********** website mirroring ************************** 
+
+wget: 
+
+# Download a complete website
+wget -m -r -linf -k -p -q -E -e robots=off http://127.0.0.1
+
+# But it may be sufficient
+wget -mpk http://127.0.0.1
+
+# Download all images of a website
+wget -r -l inf -A .png,.jpg,.jpeg,.gif -nd https://jekyllrb.com
+
+# FTP download
+wget --ftp-user=User --ftp-pas­swo­rd=Mir URL
+
+
+Startup:
+  -V,  --version           display the version of Wget and exit.
+  -h,  --help              print this help.
+  -b,  --background        go to background after startup.
+  -e,  --execute=COMMAND   execute a `.wgetrc'-style command.
+
+Logging and input file:
+  -o,  --output-file=FILE    log messages to FILE.
+  -a,  --append-output=FILE  append messages to FILE.
+  -d,  --debug               print lots of debugging information.
+  -q,  --quiet               quiet (no output).
+  -v,  --verbose             be verbose (this is the default).
+  -nv, --no-verbose          turn off verboseness, without being quiet.
+       --report-speed=TYPE   Output bandwidth as TYPE.  TYPE can be bits.
+  -i,  --input-file=FILE     download URLs found in local or external FILE.
+  -F,  --force-html          treat input file as HTML.
+  -B,  --base=URL            resolves HTML input-file links (-i -F)
+                             relative to URL.
+       --config=FILE         Specify config file to use.
+Download:
+  -t,  --tries=NUMBER            set number of retries to NUMBER (0 unlimits).
+       --retry-connrefused       retry even if connection is refused.
+  -O,  --output-document=FILE    write documents to FILE.
+  -nc, --no-clobber              skip downloads that would download to
+                                 existing files (overwriting them).
+  -c,  --continue                resume getting a partially-downloaded file.
+       --progress=TYPE           select progress gauge type.
+  -N,  --timestamping            don't re-retrieve files unless newer than
+                                 local.
+  --no-use-server-timestamps     don't set the local file's timestamp by
+                                 the one on the server.
+  -S,  --server-response         print server response.
+       --spider                  don't download anything.
+  -T,  --timeout=SECONDS         set all timeout values to SECONDS.
+       --dns-timeout=SECS        set the DNS lookup timeout to SECS.
+       --connect-timeout=SECS    set the connect timeout to SECS.
+       --read-timeout=SECS       set the read timeout to SECS.
+  -w,  --wait=SECONDS            wait SECONDS between retrievals.
+       --waitretry=SECONDS       wait 1..SECONDS between retries of a retrieval.
+       --random-wait             wait from 0.5*WAIT...1.5*WAIT secs between retrievals.
+       --no-proxy                explicitly turn off proxy.
+  -Q,  --quota=NUMBER            set retrieval quota to NUMBER.
+       --bind-address=ADDRESS    bind to ADDRESS (hostname or IP) on local host.
+       --limit-rate=RATE         limit download rate to RATE.
+       --no-dns-cache            disable caching DNS lookups.
+       --restrict-file-names=OS  restrict chars in file names to ones OS allows.
+       --ignore-case             ignore case when matching files/directories.
+  -4,  --inet4-only              connect only to IPv4 addresses.
+  -6,  --inet6-only              connect only to IPv6 addresses.
+       --prefer-family=FAMILY    connect first to addresses of specified family,
+                                 one of IPv6, IPv4, or none.
+       --user=USER               set both ftp and http user to USER.
+       --password=PASS           set both ftp and http password to PASS.
+       --ask-password            prompt for passwords.
+       --no-iri                  turn off IRI support.
+       --local-encoding=ENC      use ENC as the local encoding for IRIs.
+       --remote-encoding=ENC     use ENC as the default remote encoding.
+       --unlink                  remove file before clobber.

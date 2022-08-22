@@ -1,0 +1,4 @@
+command : whatweb domain name 
+
+options :  -v verbose output 
+           -a agresive scan  :  example   : whatweb  -v -a google.com 

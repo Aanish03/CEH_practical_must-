@@ -1,0 +1,8 @@
+******************************************************************************************************************************************
+1} scan the network find the ip of the android 
+
+2} run command ./adb devices >  list the devices 
+
+3} run command ./adb shell > get the shell of the phone 
+
+4} read the file 

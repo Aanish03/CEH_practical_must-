@@ -1,0 +1,79 @@
+************** free domain resurch tool ****************** 
+
+
+example : 
+
+Showing results for tryhackme.com
+DNS Servers MX Records TXT Records Host (A) Records Domain Map
+Hosting (IP block owners)
+
+GeoIP of Host Locations
+
+DNS Servers
+
+kip.ns.cloudflare.com.
+     	173.245.59.128
+kip.ns.cloudflare.com	CLOUDFLARENET
+United States
+uma.ns.cloudflare.com.
+     	173.245.58.146
+uma.ns.cloudflare.com	CLOUDFLARENET
+United States
+MX Records ** This is where email for the domain goes...
+
+5 alt1.aspmx.l.google.com.
+   	209.85.202.27
+dg-in-f27.1e100.net	GOOGLE
+United States
+10 alt4.aspmx.l.google.com.
+   	142.250.153.27
+ea-in-f27.1e100.net	GOOGLE
+United States
+10 alt3.aspmx.l.google.com.
+   	142.250.27.27
+ra-in-f27.1e100.net	GOOGLE
+United States
+5 alt2.aspmx.l.google.com.
+   	64.233.184.26
+wa-in-f26.1e100.net	GOOGLE
+United States
+1 aspmx.l.google.com.
+   	172.253.63.27
+bi-in-f27.1e100.net	GOOGLE
+United States
+TXT Records ** Find more hosts in Sender Policy Framework (SPF) configurations
+
+"v=spf1 include:_spf.google.com include:email.chargebee.com ~all"
+"google-site-verification=umR4x8HuzWMF5g3656JY1b-61NuryD0-GqGnYN13ONo"
+Host Records (A) ** this data may not be current as it uses a static database (updated monthly)
+
+remote.tryhackme.com
+    
+HTTP: cloudflare
+TCP8080: cloudflare	172.67.27.10
+CLOUDFLARENET
+United States
+blog.tryhackme.com
+    
+HTTP: cloudflare
+TCP8080: cloudflare	104.22.54.228
+CLOUDFLARENET
+unknown
+admin.tryhackme.com
+    
+HTTP: cloudflare
+TCP8080: cloudflare	104.22.54.228
+CLOUDFLARENET
+unknown
+help.tryhackme.com
+    
+HTTP: cloudflare
+TCP8080: cloudflare	104.22.54.228
+CLOUDFLARENET
+unknown
+www.tryhackme.com
+    
+HTTP: cloudflare
+TCP8080: cloudflare	104.22.54.228
+CLOUDFLARENET
+unknown

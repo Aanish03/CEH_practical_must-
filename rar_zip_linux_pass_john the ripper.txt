@@ -1,0 +1,21 @@
+******************************* zip rar linux password cracking with john ********************
+/**********************************************************************************************\
+
+                 ********************                                                               
+                   zip  & rar passwords                                                                   
+                 ********************
+
+tool : zip2john , rar2john 
+file : test.zip , hash.txt  
+wordlist : word.txt 
+
+step: 1 
+
+$zip2john test.zip > hash.txt 
+
+
+step: 2 
+
+$john --format=zip --wordlist=word.txt hash.txt 
+
+

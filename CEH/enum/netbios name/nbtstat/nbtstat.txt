@@ -1,0 +1,3 @@
+nbtstat -A ip 
+
+1] first of the result is your netbios name 

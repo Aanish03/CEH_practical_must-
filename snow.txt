@@ -1,0 +1,21 @@
+Options Available in SNOW
+-C Compress the data if concealing, or uncompress it while extracting.
+
+-Q Quiet mode, If not set means the application will report statistics such as compression percentage and amount of storage available.
+
+-S Report on the approximate amount of space available for a hidden message in the text file. Line length is taken into account, but other options are ignored.
+
+-p For setting the password for concealment of data and while extracting the data.
+
+-l line-len When appending whitespace, snow will always produce lines shorter than this value. By default, it is set to 80.
+
+-f Content of the file will get concealed in the input file.
+
+-m Message String The content written in this flag will be concealed into the input file.
+
+Example
+Open the uncompressed file.
+Run the SNOW.exe file.
+Open CMD and reach the file that you want to hide the message within.
+Write the command like below for concealing the message into a text file:
+SNOW.EXE -C -p 1234 -m "hidden message" input.txt output.txt

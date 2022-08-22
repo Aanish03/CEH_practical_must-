@@ -1,0 +1,9 @@
+The ping utility looks up IP addresses of websites and other kinds of running network devices. Ping attempts to contact the site by name and reports back with the IP address it finds, along with other information about the connection.
+
+Ping is a Command Prompt command in Windows. For example, to find the IP address of Example.com on a desktop computer, use the command-line interface instead of the graphical interface, and enter the command:
+
+*****************************************************************************************************
+
+ping lifewire.com
+
+*****************************************************************************************************s

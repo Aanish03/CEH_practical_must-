@@ -1,0 +1,47 @@
+* hashcat *
+
+*basic syntax
+
+hashcat attack mode hash type hash wordlist 
+
+* attack modes 
+-wordlist ==> -a 0 
+-wordlist+rule ==> -a 0 
+-combinator ==> -a 1 
+-bruteforce ==> -a 3
+
+* hash types *
+url : https://hashcat.net/wiki/doku.php?id=example_hashes
+
+** syntax ** 
+hashcat -a 0 -m 0 hash.txt pathOfWordlist
+
+** svaing output **  
+
+--outfile nameoffile.txt 
+
+hashcat -a 0 -m 0  hash.txt wordlistpath --ouputfile out.txt 
+
+
+ 
+** rules for crack hashes ** 
+
+case 1 : when you have to use rules in single wordlist 
+
+hashcat -a 0 -m 0 hash.txt wordlist.txt -r  hashcat/rules/rockyou-30000.rule
+
+ 
+case 2 : combine 2 wordlist 
+
+hashcat -a 1 -m 0 hash.txt wordlist1.txt wordlist2.txt 
+
+** bruthforce mode ** 
+imp : charset where use in bruthforce 
+
+?l - abcdefg 
+?u - ABCDEF 
+?d - 0123456789
+?s -!@#$%^&*
+?a - 
+
+example : hashcat -a 3 

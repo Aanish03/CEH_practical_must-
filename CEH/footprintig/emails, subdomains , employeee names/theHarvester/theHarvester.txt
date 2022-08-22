@@ -1,0 +1,14 @@
+********** theHarvester ********************* 
+
+-d domain 
+-l limit the results 
+-g google dork 
+-f saveresults.txt 
+-s shodon 
+-b source ex. google , bing 
+-h  output.txt 
+
+
+example : 
+
+theHarvester -d exam.com -l 400 -b google , bing 
